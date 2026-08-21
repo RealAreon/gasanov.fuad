@@ -1,0 +1,95 @@
+{
+  "meta": {
+    "title": "Fuad Gasanov — Front-End & UX/UI Designer",
+    "description": "Личное портфолио Fuad Gasanov — Front-End разработка, UX/UI дизайн и Vibe-Coding."
+  },
+  "nav": {
+    "stack": "Стек",
+    "works": "Работы",
+    "contact": "Контакт",
+    "write": "Написать",
+    "openMenu": "Открыть меню",
+    "closeMenu": "Закрыть меню",
+    "language": "Язык"
+  },
+  "hero": {
+    "badge": "Открыт к проектам",
+    "role": "Front-End · UX/UI · Vibe-Coding",
+    "description": "Создаю digital-продукты с характером — от точной типографики до живых интерфейсов и премиального UX.",
+    "ctaPrimary": "Смотреть работы",
+    "ctaSecondary": "Связаться"
+  },
+  "skills": {
+    "eyebrow": "Стек / Навыки",
+    "title": "Инструменты, которыми я собираю ощущение продукта"
+  },
+  "works": {
+    "eyebrow": "Избранные работы",
+    "title": "Проекты как арт-объекты интерфейса",
+    "subtitle": "Асимметричная bento-сетка — каждый кейс со своей композицией и glow при наведении.",
+    "viewProject": "Смотреть проект",
+    "close": "Закрыть",
+    "screens": "Экраны",
+    "fullPage": "Вся страница",
+    "scrollHint": "Листайте, чтобы увидеть всю страницу"
+  },
+  "contact": {
+    "eyebrow": "Контакт",
+    "title": "Давайте сделаем что-то,",
+    "titleAccent": "что захочется трогать",
+    "location": "Remote / Worldwide",
+    "copyright": "Сделано с motion.",
+    "backToTop": "Наверх"
+  },
+  "socials": {
+    "email": "Email",
+    "telegram": "Telegram",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "linkedin": "LinkedIn"
+  },
+  "projects": {
+    "abc-car-wash": {
+      "title": "ABC Car Wash",
+      "category": "Luxury Service",
+      "description": "Премиальный опыт touchless car wash & detailing с кинематографичными визуалами и UX на конверсию."
+    },
+    "agenciy": {
+      "title": "Agenciy",
+      "category": "Creative Agency",
+      "description": "Современный agency-шаблон со смелой типографикой, storytelling кейсов и отполированным motion."
+    },
+    "clipcut": {
+      "title": "ClipCut",
+      "category": "Video Agency",
+      "description": "Сайт video editing агентства — энергичная композиция, чёткие офферы и сильные CTA."
+    },
+    "grovia": {
+      "title": "Grovia",
+      "category": "Brand Landing",
+      "description": "Growth-лендинг с чистой иерархией, мягкими градиентами и уверенным messaging."
+    },
+    "halo": {
+      "title": "Halo Studio",
+      "category": "Creative Portfolio",
+      "description": "Портфолио креативной студии с точными отступами, кинетическими секциями и gallery-first подачей."
+    },
+    "portfolite": {
+      "title": "Portfolite",
+      "category": "Personal Portfolio",
+      "description": "Framer portfolio template с элегантной презентацией кейсов и лёгкой навигацией."
+    },
+    "xtract": {
+      "title": "Xtract",
+      "category": "AI Automation",
+      "description": "AI automation agency — острая SaaS-эстетика, trust signals и ясная структура услуг."
+    }
+  },
+  "skillCategories": {
+    "Frontend": "Frontend",
+    "Motion": "Motion",
+    "Design": "Design",
+    "Craft": "Craft",
+    "Backend": "Backend"
+  }
+}

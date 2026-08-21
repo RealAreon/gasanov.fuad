@@ -1,0 +1,95 @@
+{
+  "meta": {
+    "title": "Fuad Gasanov — Front-End & UX/UI Designer",
+    "description": "Portfolio personnel de Fuad Gasanov — développement Front-End, design UX/UI et Vibe-Coding."
+  },
+  "nav": {
+    "stack": "Stack",
+    "works": "Projets",
+    "contact": "Contact",
+    "write": "Écrire",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "language": "Langue"
+  },
+  "hero": {
+    "badge": "Disponible pour projets",
+    "role": "Front-End · UX/UI · Vibe-Coding",
+    "description": "Je crée des produits digitaux avec du caractère — de la typographie précise aux interfaces vivantes et UX premium.",
+    "ctaPrimary": "Voir les projets",
+    "ctaSecondary": "Me contacter"
+  },
+  "skills": {
+    "eyebrow": "Stack / Compétences",
+    "title": "Les outils avec lesquels je façonne le ressenti d'un produit"
+  },
+  "works": {
+    "eyebrow": "Projets sélectionnés",
+    "title": "Des projets comme des objets d'art d'interface",
+    "subtitle": "Une grille bento asymétrique — chaque cas a sa propre composition et un glow au survol.",
+    "viewProject": "Voir le projet",
+    "close": "Fermer",
+    "screens": "Écrans",
+    "fullPage": "Page entière",
+    "scrollHint": "Faites défiler pour explorer toute la page"
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Créons quelque chose",
+    "titleAccent": "que l'on a envie de toucher",
+    "location": "Remote / Worldwide",
+    "copyright": "Créé avec du motion.",
+    "backToTop": "Haut de page"
+  },
+  "socials": {
+    "email": "Email",
+    "telegram": "Telegram",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "linkedin": "LinkedIn"
+  },
+  "projects": {
+    "abc-car-wash": {
+      "title": "ABC Car Wash",
+      "category": "Luxury Service",
+      "description": "Expérience premium de car wash touchless & detailing avec des visuels cinématographiques et un UX orienté conversion."
+    },
+    "agenciy": {
+      "title": "Agenciy",
+      "category": "Creative Agency",
+      "description": "Template d'agence moderne avec typographie audacieuse, storytelling de cas et motion soigné."
+    },
+    "clipcut": {
+      "title": "ClipCut",
+      "category": "Video Agency",
+      "description": "Site d'agence de montage vidéo — mise en page énergique, offres claires et CTA forts."
+    },
+    "grovia": {
+      "title": "Grovia",
+      "category": "Brand Landing",
+      "description": "Landing growth avec hiérarchie claire, dégradés doux et messaging confiant."
+    },
+    "halo": {
+      "title": "Halo Studio",
+      "category": "Creative Portfolio",
+      "description": "Portfolio de studio créatif avec espacements raffinés, sections cinétiques et narration gallery-first."
+    },
+    "portfolite": {
+      "title": "Portfolite",
+      "category": "Personal Portfolio",
+      "description": "Template portfolio Framer axé sur une présentation élégante des cas et une navigation fluide."
+    },
+    "xtract": {
+      "title": "Xtract",
+      "category": "AI Automation",
+      "description": "Agence d'automatisation IA — esthétique SaaS précise, signaux de confiance et clarté des services."
+    }
+  },
+  "skillCategories": {
+    "Frontend": "Frontend",
+    "Motion": "Motion",
+    "Design": "Design",
+    "Craft": "Craft",
+    "Backend": "Backend"
+  }
+}
