@@ -26,7 +26,6 @@ function ParallaxCardImage({ children }: { children: ReactNode }) {
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],
-    layoutEffect: false,
   });
   const imageY = useTransform(scrollYProgress, [0, 1], ["-6%", "6%"]);
 
