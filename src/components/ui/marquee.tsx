@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useInView, useReducedMotion } from "framer-motion";
+import { useRef } from "react";
 import { cn } from "@/lib/utils";
 
 type MarqueeProps = {
@@ -18,8 +19,13 @@ export function Marquee({
   reverse = false,
   pauseOnHover = true,
 }: MarqueeProps) {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { margin: "20% 0px" });
+  const reduceMotion = useReducedMotion();
+
   return (
     <div
+      ref={ref}
       className={cn(
         "group relative flex overflow-hidden",
         "[mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]",
@@ -28,10 +34,14 @@ export function Marquee({
     >
       <motion.div
         className={cn(
-          "flex min-w-full shrink-0 items-center gap-4 py-2",
+          "flex min-w-full shrink-0 items-center gap-4 py-2 will-change-transform",
           pauseOnHover && "group-hover:[animation-play-state:paused]",
         )}
-        animate={{ x: reverse ? ["-50%", "0%"] : ["0%", "-50%"] }}
+        animate={
+          reduceMotion || !inView
+            ? false
+            : { x: reverse ? ["-50%", "0%"] : ["0%", "-50%"] }
+        }
         transition={{
           x: {
             repeat: Infinity,

@@ -10,35 +10,57 @@ import {
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { useState, useRef } from "react";
+import { useState, useRef, type ReactNode } from "react";
 import { ProjectModal } from "@/components/sections/project-modal";
 import { Reveal, staggerContainer, staggerItem } from "@/components/ui/reveal";
+import { useIsDesktop } from "@/hooks/use-media-query";
 import { projects, type Project } from "@/lib/data";
 import { cn } from "@/lib/utils";
+
+function StaticCardImage({ children }: { children: ReactNode }) {
+  return <div className="absolute inset-0">{children}</div>;
+}
+
+function ParallaxCardImage({ children }: { children: ReactNode }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+    layoutEffect: false,
+  });
+  const imageY = useTransform(scrollYProgress, [0, 1], ["-6%", "6%"]);
+
+  return (
+    <motion.div
+      ref={ref}
+      className="absolute inset-[-12%] will-change-transform"
+      style={{ y: imageY }}
+    >
+      {children}
+    </motion.div>
+  );
+}
 
 function ProjectCard({
   project,
   index,
   onOpen,
+  enableParallax,
 }: {
   project: Project;
   index: number;
   onOpen: (project: Project) => void;
+  enableParallax: boolean;
 }) {
   const t = useTranslations("projects");
   const tWorks = useTranslations("works");
   const ref = useRef<HTMLButtonElement>(null);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-  const imageY = useTransform(scrollYProgress, [0, 1], ["-6%", "6%"]);
-
   const glow = useMotionTemplate`radial-gradient(280px circle at ${mouseX}px ${mouseY}px, ${project.accent}33, transparent 55%)`;
 
   const handleMove = (e: React.MouseEvent<HTMLButtonElement>) => {
+    if (!enableParallax) return;
     const el = ref.current;
     if (!el) return;
     const rect = el.getBoundingClientRect();
@@ -58,10 +80,12 @@ function ProjectCard({
         project.span,
       )}
     >
-      <motion.div
-        className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-        style={{ background: glow }}
-      />
+      {enableParallax && (
+        <motion.div
+          className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+          style={{ background: glow }}
+        />
+      )}
       <div
         className="pointer-events-none absolute inset-0 rounded-[1.6rem] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
         style={{
@@ -69,24 +93,35 @@ function ProjectCard({
         }}
       />
 
-      {/* Clip layer for parallax image — keeps radius at any zoom */}
       <div className="relative mb-5 isolate overflow-hidden rounded-2xl border border-white/8 bg-[#16161C] [transform:translateZ(0)] [mask-image:radial-gradient(white,black)]">
         <div className="relative aspect-[16/10] overflow-hidden rounded-2xl">
-          <motion.div
-            className="absolute inset-[-12%] will-change-transform"
-            style={{ y: imageY }}
-          >
-            <div className="relative h-full w-full">
-              <Image
-                src={project.image}
-                alt={t(`${project.id}.title`)}
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-                priority={index < 2}
-              />
-            </div>
-          </motion.div>
+          {enableParallax ? (
+            <ParallaxCardImage>
+              <div className="relative h-full w-full">
+                <Image
+                  src={project.image}
+                  alt={t(`${project.id}.title`)}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                  priority={index < 2}
+                />
+              </div>
+            </ParallaxCardImage>
+          ) : (
+            <StaticCardImage>
+              <div className="relative h-full w-full">
+                <Image
+                  src={project.image}
+                  alt={t(`${project.id}.title`)}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover object-top"
+                  priority={index < 2}
+                />
+              </div>
+            </StaticCardImage>
+          )}
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0F0F14]/70 via-transparent to-transparent opacity-80" />
           <div className="absolute top-4 left-4 font-display text-xs tracking-[0.2em] text-white/70 uppercase">
             0{index + 1}
@@ -129,6 +164,7 @@ function ProjectCard({
 
 export function Works() {
   const t = useTranslations("works");
+  const isDesktop = useIsDesktop();
   const [active, setActive] = useState<Project | null>(null);
 
   return (
@@ -161,6 +197,7 @@ export function Works() {
               project={project}
               index={index}
               onOpen={setActive}
+              enableParallax={isDesktop}
             />
           ))}
         </motion.div>

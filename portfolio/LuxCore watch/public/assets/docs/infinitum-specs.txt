@@ -1,0 +1,21 @@
+CHRONOS — INFINITUM
+Technical Specification Sheet
+=================================
+
+MOVEMENT
+  Type .................... Swiss Automatic
+  Power reserve ........... 48 Hours
+
+CASE
+  Material ................ 316L Stainless Steel
+  Diameter ................ 42mm
+  Water resistance ........ 10 ATM
+
+GLASS
+  Crystal ................. Sapphire Crystal
+
+WARRANTY
+  Coverage ................ 5 years international
+
+Certified by the CHRONOS Atelier.
+For servicing inquiries, contact atelier@chronos-watches.example

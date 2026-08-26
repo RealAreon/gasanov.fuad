@@ -43,7 +43,7 @@ export function Header() {
         className={cn(
           "mx-auto flex max-w-6xl items-center justify-between rounded-2xl border px-3 py-2.5 transition-all duration-500 md:px-4",
           scrolled
-            ? "border-white/10 bg-[#0A0A0C]/70 shadow-[0_8px_40px_rgba(0,0,0,0.45)] backdrop-blur-xl"
+            ? "border-white/10 bg-[#0A0A0C]/85 shadow-[0_8px_40px_rgba(0,0,0,0.45)] backdrop-blur-md md:bg-[#0A0A0C]/70 md:backdrop-blur-xl"
             : "border-transparent bg-transparent",
         )}
       >

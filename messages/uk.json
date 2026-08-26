@@ -83,6 +83,16 @@
       "title": "Xtract",
       "category": "AI Automation",
       "description": "AI automation agency — гостра SaaS-естетика, trust signals і ясна структура послуг."
+    },
+    "chronos": {
+      "title": "CHRONOS",
+      "category": "Luxury Watches",
+      "description": "Преміальний e-commerce годинників із кінематографічною подачею продукту та вишуканим luxury-storefront."
+    },
+    "luxcore-watch": {
+      "title": "LuxCore Watch",
+      "category": "Luxury Product",
+      "description": "Преміальний лендинг годинників з акцентом на продукт, тактильні UI-деталі та conversion-ready luxury UX."
     }
   },
   "skillCategories": {

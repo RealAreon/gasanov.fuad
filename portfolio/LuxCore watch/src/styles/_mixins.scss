@@ -1,0 +1,80 @@
+@use 'sass:map';
+
+$breakpoints: (
+  xl: 1440px,
+  lg: 1180px,
+  md: 900px,
+  sm: 680px,
+  xs: 420px,
+);
+
+@mixin down($name) {
+  $bp: map.get($breakpoints, $name);
+
+  @media (max-width: $bp) {
+    @content;
+  }
+}
+
+@mixin up($name) {
+  $bp: map.get($breakpoints, $name);
+
+  @media (min-width: calc($bp + 1px)) {
+    @content;
+  }
+}
+
+@mixin container {
+  width: calc(100% - 110px);
+  max-width: var(--container-max);
+  margin-inline: auto;
+
+  @include down(md) {
+    width: calc(100% - 64px);
+  }
+
+  @include down(sm) {
+    width: calc(100% - 40px);
+  }
+}
+
+@mixin glass-panel {
+  background: var(--surface-glass);
+  border: 1px solid var(--surface-line);
+  backdrop-filter: blur(18px) saturate(1.1);
+  -webkit-backdrop-filter: blur(18px) saturate(1.1);
+}
+
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@mixin focus-ring {
+  outline: 1px solid var(--gold);
+  outline-offset: 4px;
+}
+
+@mixin eyebrow {
+  font-family: var(--body-font);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+@mixin hover-lift {
+  transition: transform var(--dur-fast) var(--ease-out), opacity var(--dur-fast) var(--ease-out);
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}

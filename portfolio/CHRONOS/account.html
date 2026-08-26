@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Обліковий запис | CHRONOS</title>
+  <meta name="description" content="Ексклюзивна колекція преміум годинників CHRONOS. Безкоштовна доставка по Україні.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="public/logo-mark.png" type="image/png">
+  <script>document.documentElement.classList.add('page-loading','animate-pending');</script>
+</head>
+<body data-base="">
+  <div id="site-header"></div>
+<main class="page-spacer">
+  <div class="page-header container">
+    <p class="section-label">Особистий кабінет</p>
+    <h1>Обліковий <strong>Запис</strong></h1>
+  </div>
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="account-card">
+        <div class="account-tabs">
+          <button type="button" class="account-tab active" data-tab="login">Вхід</button>
+          <button type="button" class="account-tab" data-tab="register">Реєстрація</button>
+        </div>
+        <div id="account-message" class="account-message hidden" role="status"></div>
+        <div class="account-panel active" id="panel-login">
+          <form id="login-form" class="account-form">
+            <div class="form-group">
+              <label for="login-email">Email</label>
+              <input type="email" id="login-email" name="email" required placeholder="name@example.com" autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label for="login-password">Пароль</label>
+              <input type="password" id="login-password" name="password" required placeholder="••••••••" autocomplete="current-password">
+            </div>
+            <button type="submit" class="btn btn-dark btn-full btn-lg">Увійти</button>
+          </form>
+        </div>
+        <div class="account-panel" id="panel-register">
+          <form id="register-form" class="account-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="register-first">Ім'я</label>
+                <input type="text" id="register-first" name="firstName" required placeholder="Олександр">
+              </div>
+              <div class="form-group">
+                <label for="register-last">Прізвище</label>
+                <input type="text" id="register-last" name="lastName" required placeholder="Коваленко">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="register-email">Email</label>
+              <input type="email" id="register-email" name="email" required placeholder="name@example.com" autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label for="register-password">Пароль</label>
+              <input type="password" id="register-password" name="password" required placeholder="Мінімум 8 символів" autocomplete="new-password" minlength="8">
+            </div>
+            <div class="form-group">
+              <label for="register-password-confirm">Підтвердження пароля</label>
+              <input type="password" id="register-password-confirm" name="passwordConfirm" required placeholder="Повторіть пароль" autocomplete="new-password">
+            </div>
+            <button type="submit" class="btn btn-gold btn-full btn-lg">Зареєструватися</button>
+          </form>
+        </div>
+        <p class="account-note">Реєструючись, ви погоджуєтесь з <a href="#">політикою конфіденційності</a> та <a href="#">умовами використання</a>.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+  <div id="site-footer"></div>
+  <div id="cart-overlay"></div>
+  <div id="search-overlay"></div>
+  
+  <script src="js/icons.js"></script>
+  <script src="js/i18n.js"></script>
+<script src="js/i18n-legal.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/wishlist.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/account.js"></script>
+</body>
+</html>

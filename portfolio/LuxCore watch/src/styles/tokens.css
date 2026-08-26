@@ -1,0 +1,68 @@
+/*
+  CHRONOS design tokens — exact palette from the design brief.
+*/
+
+:root {
+  --black: #050505;
+  --black-soft: #0b0b0c;
+  --graphite: #151515;
+  --ivory: #f4f0e9;
+  --ivory-soft: #ebe5dc;
+  --white: #f6f5f2;
+
+  --text-dark: #211a15;
+  --text-muted-dark: #a7a29d;
+  --text-muted-light: #66615c;
+
+  --gold: #c88a42;
+  --gold-light: #e2ad68;
+  --gold-deep: #8f5725;
+
+  --line-dark: rgba(255, 255, 255, 0.13);
+  --line-gold: rgba(200, 138, 66, 0.55);
+
+  --glass-dark: rgba(10, 10, 11, 0.66);
+  --glass-light: rgba(255, 255, 255, 0.46);
+
+  --display-font: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --body-font: 'Manrope', 'Helvetica Neue', Arial, sans-serif;
+
+  --container-gutter: clamp(20px, 3.5vw, 55px);
+  --container-max: 1600px;
+  --header-h: 88px;
+  --side-nav-w: 56px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 0.22s;
+  --dur-med: 0.45s;
+  --dur-slow: 0.9s;
+
+  --z-base: 1;
+  --z-nav: 40;
+  --z-header: 50;
+  --z-overlay: 80;
+  --z-modal: 90;
+  --z-toast: 100;
+  --z-preloader: 110;
+
+  --page-bg: var(--black);
+  --page-fg: var(--ivory);
+  --header-fg: var(--ivory);
+  --header-bg: rgba(5, 5, 5, 0.55);
+  --surface-line: var(--line-dark);
+  --surface-glass: var(--glass-dark);
+  --text-muted: var(--text-muted-dark);
+}
+
+[data-theme='light'] {
+  --page-bg: var(--ivory);
+  --page-fg: var(--text-dark);
+  --header-fg: var(--text-dark);
+  --header-bg: rgba(244, 240, 233, 0.72);
+  --surface-line: rgba(33, 26, 21, 0.12);
+  --surface-glass: var(--glass-light);
+  --text-muted: var(--text-muted-light);
+}

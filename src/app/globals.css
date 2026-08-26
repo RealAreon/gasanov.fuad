@@ -77,3 +77,14 @@ a {
     scroll-behavior: auto !important;
   }
 }
+
+/* Touch devices: native scroll + cheaper compositing */
+@media (hover: none), (pointer: coarse) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+}

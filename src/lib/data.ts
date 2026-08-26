@@ -27,9 +27,11 @@ export const skills = [
 export type ProjectId =
   | "abc-car-wash"
   | "agenciy"
+  | "chronos"
   | "clipcut"
   | "grovia"
   | "halo"
+  | "luxcore-watch"
   | "portfolite"
   | "xtract";
 
@@ -53,11 +55,29 @@ function projectScreens(id: ProjectId): [string, string, string] {
 
 export const projects: Project[] = [
   {
+    id: "chronos",
+    year: "2026",
+    tags: ["E-commerce", "Luxury", "Watches"],
+    accent: "#D4AF37",
+    span: "md:col-span-2 md:row-span-2",
+    image: "/works/chronos/shot-1.png",
+    screens: projectScreens("chronos"),
+  },
+  {
+    id: "luxcore-watch",
+    year: "2026",
+    tags: ["Luxury", "Product", "E-commerce"],
+    accent: "#C0C0C0",
+    span: "md:col-span-1 md:row-span-1",
+    image: "/works/luxcore-watch/shot-1.png",
+    screens: projectScreens("luxcore-watch"),
+  },
+  {
     id: "halo",
     year: "2025",
     tags: ["Framer", "Portfolio", "Motion"],
     accent: "#5EEAD4",
-    span: "md:col-span-2 md:row-span-2",
+    span: "md:col-span-1 md:row-span-1",
     image: "/works/halo/shot-1.png",
     screens: projectScreens("halo"),
   },

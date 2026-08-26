@@ -1,0 +1,32 @@
+.info-modal {
+  width: min(560px, 100%) !important;
+  background: var(--black-soft);
+  color: var(--ivory);
+  position: relative;
+  padding: 48px 42px;
+
+  &__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    h2 {
+      font-family: var(--display-font);
+      font-weight: 200;
+      font-size: clamp(1.9rem, 4vw, 2.4rem);
+      margin-bottom: 4px;
+    }
+
+    p {
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: var(--text-muted-dark);
+    }
+  }
+}

@@ -1,0 +1,98 @@
+@use '../../styles/mixins' as *;
+
+.menu-overlay {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--black);
+  color: var(--ivory);
+  padding-block: 32px;
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: clamp(32px, 8vh, 90px);
+  }
+
+  &__brand {
+    font-family: var(--display-font);
+    font-size: 1.1rem;
+    letter-spacing: 0.3em;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+
+    button {
+      display: flex;
+      align-items: baseline;
+      gap: 20px;
+      padding-block: 10px;
+      font-family: var(--display-font);
+      font-weight: 200;
+      font-size: clamp(2.6rem, 8vw, 5.6rem);
+      text-transform: uppercase;
+      color: var(--ivory);
+      opacity: 0.72;
+      text-align: left;
+      transition: opacity var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out), padding-left var(--dur-fast) var(--ease-out);
+
+      &:hover,
+      &:focus-visible {
+        opacity: 1;
+        color: var(--gold);
+        padding-left: 12px;
+      }
+    }
+  }
+
+  &__index {
+    font-family: var(--body-font);
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    opacity: 0.8;
+  }
+
+  &__bottom {
+    display: flex;
+    gap: clamp(40px, 8vw, 120px);
+    padding-top: 32px;
+    border-top: 1px solid var(--line-dark);
+
+    @include down(sm) {
+      flex-direction: column;
+      gap: 24px;
+    }
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__link {
+    font-family: var(--body-font);
+    font-size: 0.9rem;
+    color: var(--ivory);
+    opacity: 0.75;
+    text-align: left;
+    transition: opacity var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+
+    &:hover,
+    &:focus-visible {
+      opacity: 1;
+      color: var(--gold);
+    }
+  }
+
+  &__socials {
+    display: flex;
+    gap: 10px;
+  }
+}

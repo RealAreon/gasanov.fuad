@@ -1,0 +1,128 @@
+@use '../../styles/mixins' as *;
+
+.reviews-modal {
+  min-height: 100%;
+  background: var(--ivory);
+  color: var(--text-dark);
+  padding-block: 32px 80px;
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+
+    h2 {
+      font-family: var(--display-font);
+      font-weight: 200;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+    }
+  }
+
+  &__filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 36px;
+    flex-wrap: wrap;
+
+    button {
+      padding: 10px 18px;
+      border: 1px solid var(--surface-line);
+      border-radius: 999px;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      color: var(--text-muted-light);
+      transition: all var(--dur-fast) var(--ease-out);
+
+      &:hover {
+        border-color: var(--gold);
+        color: var(--text-dark);
+      }
+
+      &.is-active {
+        background: var(--text-dark);
+        color: var(--ivory);
+        border-color: var(--text-dark);
+      }
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+
+    @include down(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include down(sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 28px;
+    background: var(--white);
+    border: 1px solid var(--surface-line);
+    border-radius: var(--radius-md);
+
+    svg {
+      color: var(--gold);
+    }
+  }
+
+  &__quote {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  &__stars {
+    display: flex;
+    gap: 3px;
+
+    .is-empty {
+      color: var(--surface-line);
+    }
+
+    .is-filled {
+      color: var(--gold);
+    }
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 14px;
+    border-top: 1px solid var(--surface-line);
+
+    img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+
+  &__name {
+    font-weight: 600;
+    font-size: 0.88rem;
+  }
+
+  &__role {
+    font-size: 0.78rem;
+    color: var(--text-muted-light);
+  }
+
+  &__empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: var(--text-muted-light);
+    padding-block: 40px;
+  }
+}

@@ -83,6 +83,16 @@
       "title": "Xtract",
       "category": "AI Automation",
       "description": "AI automation agency experience — sharp SaaS aesthetics, trust signals, and service clarity."
+    },
+    "chronos": {
+      "title": "CHRONOS",
+      "category": "Luxury Watches",
+      "description": "Premium watch e-commerce experience with cinematic product storytelling and a refined luxury storefront."
+    },
+    "luxcore-watch": {
+      "title": "LuxCore Watch",
+      "category": "Luxury Product",
+      "description": "High-end watch landing focused on product presence, tactile UI details, and conversion-ready luxury UX."
     }
   },
   "skillCategories": {

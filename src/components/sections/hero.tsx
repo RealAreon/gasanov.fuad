@@ -51,13 +51,13 @@ export function Hero() {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-size-[72px_72px] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_40%,black,transparent)]" />
         <motion.div
           aria-hidden
-          className="absolute top-[18%] right-[8%] h-40 w-40 rounded-full border border-accent/25 md:h-56 md:w-56"
+          className="absolute top-[18%] right-[8%] hidden h-40 w-40 rounded-full border border-accent/25 md:block md:h-56 md:w-56"
           animate={{ rotate: 360 }}
           transition={{ duration: 48, repeat: Infinity, ease: "linear" }}
         />
         <motion.div
           aria-hidden
-          className="absolute top-[22%] right-[12%] h-24 w-24 rounded-full border border-dashed border-white/15 md:h-32 md:w-32"
+          className="absolute top-[22%] right-[12%] hidden h-24 w-24 rounded-full border border-dashed border-white/15 md:block md:h-32 md:w-32"
           animate={{ rotate: -360 }}
           transition={{ duration: 36, repeat: Infinity, ease: "linear" }}
         />

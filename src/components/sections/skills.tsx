@@ -45,7 +45,7 @@ function SkillChip({
     <motion.div
       whileHover={{ y: -6, scale: 1.04 }}
       transition={{ type: "spring", stiffness: 320, damping: 22 }}
-      className="group relative flex min-w-[180px] items-center gap-3 rounded-2xl border border-white/10 bg-[#111116]/80 px-4 py-3.5 backdrop-blur-sm"
+      className="group relative flex min-w-[180px] items-center gap-3 rounded-2xl border border-white/10 bg-[#111116] px-4 py-3.5 md:bg-[#111116]/80 md:backdrop-blur-sm"
     >
       <span className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100 [background:radial-gradient(circle_at_30%_20%,rgba(94,234,212,0.18),transparent_55%)]" />
       <span className="relative flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] text-accent transition-colors duration-300 group-hover:border-accent/40">

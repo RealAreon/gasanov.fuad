@@ -1,0 +1,122 @@
+@use '../../styles/mixins' as *;
+
+.modal-shell {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  display: flex;
+
+  &__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(4, 4, 4, 0.72);
+    backdrop-filter: blur(6px);
+    animation: modal-fade var(--dur-med) var(--ease-out);
+  }
+
+  &__panel {
+    position: relative;
+    z-index: 1;
+    background: var(--black-soft);
+    color: var(--ivory);
+    border: 1px solid var(--line-dark);
+    max-height: 100vh;
+    overflow-y: auto;
+    animation: modal-panel-in var(--dur-med) var(--ease-out);
+  }
+
+  &--center {
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+
+    .modal-shell__panel {
+      width: min(680px, 100%);
+      max-height: min(88vh, 900px);
+      border-radius: var(--radius-md);
+    }
+  }
+
+  &--drawer-right {
+    justify-content: flex-end;
+
+    .modal-shell__panel {
+      width: min(460px, 100%);
+      height: 100%;
+      max-height: 100vh;
+      animation: modal-drawer-in var(--dur-med) var(--ease-out);
+    }
+  }
+
+  &__close {
+    position: sticky;
+    top: 16px;
+    float: right;
+    z-index: 5;
+    margin: 16px 16px 0 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px 10px 16px;
+    border: 1px solid var(--gold);
+    background: rgba(5, 5, 5, 0.88);
+    color: var(--ivory);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    pointer-events: auto;
+
+    &:hover,
+    &:focus-visible {
+      background: var(--gold);
+      color: var(--black);
+    }
+  }
+
+  &--full {
+    align-items: stretch;
+    justify-content: stretch;
+
+    .modal-shell__panel {
+      width: 100%;
+      height: 100%;
+      max-height: 100vh;
+      border: none;
+    }
+
+    .modal-shell__close {
+      position: fixed;
+      top: 18px;
+      right: 18px;
+      float: none;
+      margin: 0;
+    }
+  }
+}
+
+@keyframes modal-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes modal-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+}
+
+@keyframes modal-drawer-in {
+  from {
+    transform: translateX(100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modal-shell__backdrop,
+  .modal-shell__panel {
+    animation: none;
+  }
+}

@@ -2,8 +2,16 @@
 
 import { ReactLenis } from "lenis/react";
 import type { ReactNode } from "react";
+import { useIsDesktop } from "@/hooks/use-media-query";
 
 export function SmoothScroll({ children }: { children: ReactNode }) {
+  const isDesktop = useIsDesktop();
+
+  // Lenis + RAF smooth scroll feels laggy on mobile touch scrolling.
+  if (!isDesktop) {
+    return <>{children}</>;
+  }
+
   return (
     <ReactLenis
       root

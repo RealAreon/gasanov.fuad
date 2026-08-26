@@ -1,0 +1,141 @@
+.cart-drawer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--black-soft);
+  color: var(--ivory);
+  padding: 28px;
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+
+    h2 {
+      font-family: var(--display-font);
+      font-weight: 300;
+      font-size: 1.6rem;
+      letter-spacing: 0.04em;
+    }
+  }
+
+  &__empty {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    text-align: center;
+    color: var(--text-muted-dark);
+
+    svg {
+      opacity: 0.5;
+    }
+  }
+
+  &__list {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  &__line {
+    display: grid;
+    grid-template-columns: 72px 1fr 24px;
+    gap: 14px;
+    align-items: center;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--line-dark);
+  }
+
+  &__thumb {
+    width: 72px;
+    height: 72px;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    background: var(--graphite);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__name {
+    font-family: var(--display-font);
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    font-weight: 300;
+  }
+
+  &__price {
+    font-size: 0.82rem;
+    color: var(--gold);
+    margin-top: 2px;
+  }
+
+  &__qty {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    border: 1px solid var(--line-dark);
+    border-radius: var(--radius-sm);
+    padding: 4px 8px;
+    width: fit-content;
+
+    button {
+      display: flex;
+      color: var(--ivory);
+      opacity: 0.7;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    span {
+      font-size: 0.8rem;
+      min-width: 16px;
+      text-align: center;
+    }
+  }
+
+  &__remove {
+    align-self: start;
+    color: var(--text-muted-dark);
+    transition: color var(--dur-fast) var(--ease-out);
+
+    &:hover {
+      color: #d97575;
+    }
+  }
+
+  &__footer {
+    padding-top: 20px;
+    border-top: 1px solid var(--line-dark);
+  }
+
+  &__subtotal {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--display-font);
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+  }
+
+  &__note {
+    font-size: 0.76rem;
+    color: var(--text-muted-dark);
+    margin-bottom: 18px;
+  }
+
+  .btn-solid {
+    width: 100%;
+  }
+}

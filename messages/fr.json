@@ -83,6 +83,16 @@
       "title": "Xtract",
       "category": "AI Automation",
       "description": "Agence d'automatisation IA — esthétique SaaS précise, signaux de confiance et clarté des services."
+    },
+    "chronos": {
+      "title": "CHRONOS",
+      "category": "Luxury Watches",
+      "description": "E-commerce horloger premium avec storytelling produit cinématographique et une vitrine luxury raffinée."
+    },
+    "luxcore-watch": {
+      "title": "LuxCore Watch",
+      "category": "Luxury Product",
+      "description": "Landing montre haut de gamme centrée sur la présence produit, les détails UI tactiles et un UX luxury prêt à convertir."
     }
   },
   "skillCategories": {

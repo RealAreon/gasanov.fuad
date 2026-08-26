@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Каталог | CHRONOS</title>
+  <meta name="description" content="Ексклюзивна колекція преміум годинників CHRONOS. Безкоштовна доставка по Україні.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="public/logo-mark.png" type="image/png">
+  <script>document.documentElement.classList.add('page-loading','animate-pending');</script>
+</head>
+<body data-base="" data-i18n-title="page.catalogTitle">
+  <div id="site-preloader" aria-hidden="true">
+    <div class="preloader-inner">
+      <div class="preloader-watch">
+        <svg class="preloader-watch-svg" viewBox="0 0 100 100" aria-hidden="true">
+          <circle cx="50" cy="50" r="44" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.25"/>
+          <circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.15"/>
+          <line x1="50" y1="10" x2="50" y2="14" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+          <line x1="50" y1="86" x2="50" y2="90" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+          <line x1="10" y1="50" x2="14" y2="50" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+          <line x1="86" y1="50" x2="90" y2="50" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+          <g class="preloader-hand-hour"><line x1="50" y1="50" x2="50" y2="30" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></g>
+          <g class="preloader-hand-minute"><line x1="50" y1="50" x2="50" y2="20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></g>
+          <g class="preloader-hand-second"><line x1="50" y1="54" x2="50" y2="16" stroke="var(--gold)" stroke-width="1" stroke-linecap="round"/></g>
+          <circle cx="50" cy="50" r="3" fill="currentColor"/>
+        </svg>
+      </div>
+      <p class="preloader-brand">CHRONOS</p>
+    </div>
+  </div>
+  <div id="site-header"></div>
+<main class="page-spacer">
+  <div class="page-header container"><h1 data-i18n="catalog.title">Каталог</h1></div>
+  <section class="section section-catalog" style="padding-top:0">
+    <div class="container catalog-layout">
+      <aside class="catalog-filters" id="filters-root">
+        <div class="filters-backdrop" id="filters-backdrop" hidden></div>
+        <div class="filters-panel" id="filters-panel" role="dialog" aria-modal="false" aria-labelledby="filters-sheet-title">
+          <div class="filters-sheet-chrome">
+            <div class="filters-sheet-handle" aria-hidden="true"></div>
+            <div class="filters-sheet-header">
+              <h2 id="filters-sheet-title" data-i18n="catalog.filters">Фільтри</h2>
+              <button type="button" class="icon-btn filters-close-btn" id="filters-close" aria-label="Close filters">×</button>
+            </div>
+          </div>
+
+          <div class="filters-panel-body" id="filters-panel-body">
+            <div class="filter-block">
+              <span class="filter-label" data-i18n="catalog.collection">Колекція</span>
+              <div class="filter-chips" id="style-filters" role="group" aria-label="Collection"></div>
+            </div>
+
+            <div class="filter-block">
+              <span class="filter-label" data-i18n="catalog.availability">Статус</span>
+              <div class="filter-chips" role="group" aria-label="Status">
+                <button type="button" class="filter-btn" data-facet="new" data-i18n="badge.new" aria-pressed="false">Новинка</button>
+                <button type="button" class="filter-btn" data-facet="sale" data-i18n="badge.sale" aria-pressed="false">Акція</button>
+              </div>
+            </div>
+
+            <div class="filter-block price-filter-wrap" id="price-filter-wrap">
+              <span class="filter-label" id="price-toggle" data-i18n="catalog.price">Ціна</span>
+              <div class="price-panel" id="price-panel" role="group" aria-labelledby="price-toggle">
+                <p class="price-range-label" id="price-range-label">0 – 130000</p>
+                <div class="dual-range">
+                  <div class="dual-range-track"><div class="dual-range-fill" id="price-range-fill"></div></div>
+                  <input type="range" id="price-min" min="0" max="130000" step="5000" value="0" aria-label="Min price">
+                  <input type="range" id="price-max" min="0" max="130000" step="5000" value="130000" aria-label="Max price">
+                </div>
+                <div class="price-inputs">
+                  <label>
+                    <span data-i18n="catalog.min">Мін</span>
+                    <input type="number" id="price-min-num" min="0" max="130000" step="5000" value="0" inputmode="numeric">
+                  </label>
+                  <label>
+                    <span data-i18n="catalog.max">Макс</span>
+                    <input type="number" id="price-max-num" min="0" max="130000" step="5000" value="130000" inputmode="numeric">
+                  </label>
+                </div>
+                <button type="button" class="btn btn-outline btn-full" id="price-reset" data-i18n="catalog.resetPrice">Скинути ціну</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="filters-sheet-footer">
+            <button type="button" class="btn btn-outline" id="filters-reset-all" data-i18n="catalog.clear">Скинути все</button>
+            <button type="button" class="btn btn-dark" id="filters-apply"><span data-i18n="catalog.showResults">Показати</span> (<span id="filters-apply-count">0</span>)</button>
+          </div>
+        </div>
+      </aside>
+
+      <div class="catalog-main">
+        <div class="catalog-toolbar">
+          <label class="catalog-search-wrap" for="catalog-search">
+            <span class="sr-only" data-i18n="search.title">Пошук годинників</span>
+            <input type="search" id="catalog-search" class="catalog-search" data-i18n-placeholder="search.placeholder" placeholder="Назва, бренд, стиль, механізм..." autocomplete="off">
+          </label>
+          <button type="button" class="filters-open-btn" id="filters-open" aria-expanded="false" aria-controls="filters-panel">
+            <span data-i18n="catalog.filters">Фільтри</span>
+            <span class="filters-badge hidden" id="filters-badge" aria-hidden="true">0</span>
+          </button>
+          <span id="catalog-count" class="catalog-count" aria-live="polite"></span>
+          <div class="sort-wrap" id="sort-select-wrap">
+            <span class="sort-label" data-i18n="catalog.sort">Сортування</span>
+            <button type="button" class="custom-select-btn" id="sort-select-btn" aria-haspopup="listbox" aria-expanded="false">
+              <span id="sort-select-label" data-i18n="sort.economy">Спочатку економ клас</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="custom-select-menu" id="sort-select-menu" role="listbox">
+              <button type="button" class="custom-select-option active" data-sort="economy" data-i18n="sort.economy" role="option" aria-selected="true">Спочатку економ клас</button>
+              <button type="button" class="custom-select-option" data-sort="luxury" data-i18n="sort.luxury" role="option" aria-selected="false">Спочатку люкс клас</button>
+              <button type="button" class="custom-select-option" data-sort="new" data-i18n="sort.new" role="option" aria-selected="false">Спочатку нова колекція</button>
+              <button type="button" class="custom-select-option" data-sort="old" data-i18n="sort.old" role="option" aria-selected="false">Спочатку минула колекція</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="active-filters" class="active-filters hidden"></div>
+        <div class="products-grid cols-3" id="catalog-grid" aria-busy="false"></div>
+        <div class="pagination" id="pagination"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+  <div id="site-footer"></div>
+  <div id="cart-overlay"></div>
+  <div id="search-overlay"></div>
+
+  <script src="js/icons.js"></script>
+  <script src="js/i18n.js"></script>
+<script src="js/i18n-legal.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/wishlist.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/catalog.js"></script>
+</body>
+</html>
